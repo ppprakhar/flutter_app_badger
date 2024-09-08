@@ -1,4 +1,4 @@
-package fr.g123k.flutterappbadge.flutterappbadgerexample;
+package fr.ppprakhar.flutterappbadge.flutterappbadgerexample;
 
 import android.os.Bundle;
 
