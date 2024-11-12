@@ -6,37 +6,32 @@ buildscript {
         google()
         mavenCentral()
     }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
-    }
-}
-
-rootProject.allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
+        targetSdkVersion 34
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
-        disable 'InvalidPackage'
+
+    buildFeatures {
+        buildConfig = false
     }
+
     if (project.android.hasProperty('namespace')) {
         namespace 'fr.ppprakhar.flutterappbadge.flutterappbadger'
+    }
+
+    lint {
+        disable 'InvalidPackage'
     }
 }
 
 dependencies {
-    //noinspection GradleDependency
     implementation "me.leolin:ShortcutBadger:1.1.22@aar"
 }
